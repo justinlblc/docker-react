@@ -1,0 +1,10 @@
+language: generic
+sudo: required #need sudo to build
+services:
+  - docker #travis will install a copy of docker
+  
+before_install: #series of command executed before our tests 
+  - docker build -t justinlblc/docker-react -f Dockerfile.dev . #we build our container and tag it to easily refer to it in the future
+
+script: #supposed to contain the commands to run the tests
+  - docker run -e CI=true justinlblc/docker-react npm run test #nm run tests sends us to a menu, so to exit after the first test, we had -e CI=true

@@ -19,5 +19,5 @@ deploy: #add a config to tell Travis how to take our app and deploy it to AWS
   on:
     branch: master      #any time we push code on branch master, it is time to deploy
   access_key_id: $AWS_ACCESS_KEY
-  secret_acess_key:
+  secret_access_key:
     secure: "$AWS_SECRET_KEY"

@@ -12,10 +12,10 @@ script: #supposed to contain the commands to run the tests
 deploy: #add a config to tell Travis how to take our app and deploy it to AWS
   provider: elasticbeanstalk
   region: "us-east-2"        #Depends upon where we created our elasticbeanstalk instance. Look at the URL, it says us-east-2
-  app: "Docker-react"
+  app: "docker-react"
   env: "Dockerreact-env"
   bucket_name: "elasticbeanstalk-us-east-2-586516611809"        #bucket in which Travis CI will put our files into. Look in services, S3, you have the name.
-  bucket_path: "Docker-react"                                   #app name by default
+  bucket_path: "docker-react"                                   #app name by default
   on:
     branch: master      #any time we push code on branch master, it is time to deploy
   access_key_id: $AWS_ACCESS_KEY
